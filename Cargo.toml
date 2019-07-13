@@ -1,0 +1,9 @@
+[package]
+name = "postgres-dev-db"
+version = "0.1.0"
+authors = ["Andrew Wrenn <awrenn53@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+failure = "~0.1"
+postgres = "0.15"
