@@ -28,7 +28,7 @@ impl PostgresContainer {
         Command::new("docker")
             .arg("run")
             .arg("-p")
-            .arg(format!("127.0.0.125:{}:5432", port).as_str())
+            .arg(format!("127.0.0.1:{}:5432", port).as_str())
             .arg("--name")
             .arg(name)
             .arg("postgres:latest")
@@ -45,7 +45,7 @@ impl PostgresContainer {
             params::Builder::new()
                 .port(self.port)
                 .user("postgres", None)
-                .build(params::Host::Tcp(String::from("127.0.0.125"))),
+                .build(params::Host::Tcp(String::from("127.0.0.1"))),
             TlsMode::None,
         )?)
     }
